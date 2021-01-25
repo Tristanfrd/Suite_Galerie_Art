@@ -117,3 +117,4 @@ input[type=sumbit]:hover,
 input[type=submit]:focus{
 	background-color:limegreen;
 }
+table{border-collapse: collapse; }
