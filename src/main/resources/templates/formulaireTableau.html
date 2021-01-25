@@ -33,8 +33,9 @@ and open the template in the editor.
 				<label for="auteur" >Artiste:</label>
 				<select th:field="*{auteur}" >
                                     <option value =0 >Artiste inconnu</option>
-                                    <option value =1 th:each="a: ${artiste}" th:text="${a.nom}" >Artiste connu</option>
-
+                                    <optgroup label="Artiste connu" th:each="a: ${artiste}">
+                                        <option value =1  th:text="${a.nom}" >Artiste connu</option>
+                                    </optgroup>
                                 </select>
 			</div>
                     <hr/>
