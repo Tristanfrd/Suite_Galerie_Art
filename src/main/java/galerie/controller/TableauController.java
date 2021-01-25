@@ -48,13 +48,13 @@ public class TableauController {
             dao.save(tableau);
             message = "Le tableau '" + tableau.getTitre() + "' a été correctement enregistrée";
         } catch (DataIntegrityViolationException e) {
-            // Les noms sont définis comme 'UNIQUE' 
+            // Les titres sont définis comme 'UNIQUE' 
             // En cas de doublon, JPA lève une exception de violation de contrainte d'intégrité
             message = "Erreur : Le tableau '" + tableau.getTitre() + "' existe déjà";
         }
         // RedirectAttributes permet de transmettre des informations lors d'une redirection,
         // Ici on transmet un message de succès ou d'erreur
-        // Ce message est accessible et affiché dans la vue 'afficheGalerie.html'
+        // Ce message est accessible et affiché dans la vue 'afficheTableau.html'
         redirectInfo.addFlashAttribute("message", message);
         return "redirect:show"; // POST-Redirect-GET : on se redirige vers l'affichage de la liste		
     }
