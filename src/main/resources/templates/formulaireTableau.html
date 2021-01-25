@@ -20,7 +20,7 @@ and open the template in the editor.
 				<label for="titre">Titre:</label>
 				<!--/* th:field définit quel champ de l'objet est édité par cette zone de saisie */-->
 				<input type="text" th:field="*{titre}" placeholder="Titre du tableau"/>
-			</div>
+                        </div>
 			<div class="column">
 				<label for="dimension">Dimension:</label>
 				<input type="text" th:field="*{dimension}" placeholder="Dimensions du tableau"/>				
@@ -32,8 +32,8 @@ and open the template in the editor.
                     	<div class="column" >
 				<label for="auteur" >Artiste:</label>
 				<select th:field="*{auteur}" >
-                                    <option value="inconnu" >Artiste inconnu</option>
-                                    <option value="connu" th:each="a: ${artiste}" th:text="${a.nom}" >Artiste connu</option>
+                                    <option value =0 >Artiste inconnu</option>
+                                    <option value =1 th:each="a: ${artiste}" th:text="${a.nom}" >Artiste connu</option>
 
                                 </select>
 			</div>
