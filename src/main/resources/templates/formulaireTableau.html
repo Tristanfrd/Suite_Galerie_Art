@@ -20,13 +20,25 @@ and open the template in the editor.
 				<label for="titre">Titre:</label>
 				<!--/* th:field définit quel champ de l'objet est édité par cette zone de saisie */-->
 				<input type="text" th:field="*{titre}" placeholder="Titre du tableau"/>
-                                <hr/>
-				<input type="submit" value="Enregistrer" /> <input type="reset" value="Réinitialiser" />
 			</div>
 			<div class="column">
 				<label for="dimension">Dimension:</label>
 				<input type="text" th:field="*{dimension}" placeholder="Dimensions du tableau"/>				
 			</div>
+                    	<div class="column">
+				<label for="support">Support:</label>
+				<input type="text" th:field="*{support}" placeholder="Suppport du tableau"/>				
+			</div>
+                    	<div class="column" >
+				<label for="auteur" >Artiste:</label>
+				<select th:field="*{auteur}" >
+                                    <option value="inconnu" >Artiste inconnu</option>
+                                    <option value="connu" th:each="a: ${artiste}" th:text="${a.nom}" >Artiste connu</option>
+
+                                </select>
+			</div>
+                    <hr/>
+			<input type="submit" value="Enregistrer" /> <input type="reset" value="Réinitialiser" />
 		</form>		
 		<hr/>
 		<a th:href="@{/}" href="../static/index.html">Retour au menu</a>
