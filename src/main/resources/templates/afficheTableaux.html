@@ -19,13 +19,12 @@ and open the template in the editor.
 		<!--/* On affiche un éventuel message d'erreur */-->
 		<h3 th:text="${message}">Message de succès ou d'erreur</h3>				
 		<table>
-			<!--/* Pour chaque catégorie gdans la liste 'galeries' transmise par le contrôleur */-->
+			<!--/* Pour chaque catégorie gdans la liste 'tableaux' transmise par le contrôleur */-->
 			<tr th:each="t: ${tableaux}">
                             <td>Titre: <em th:text="${t.titre}">Le nom du tableau</em></td>
                             <td>Support: <em th:text="${t.support}">Le support du tableau</em></td>
                             <td>Dimensions: <em th:text="${t.dimension}">Les dimensions du tableau</em></td>
-                            <td> <p th:utext="${t.auteur==null} ? ${null} : ${t.auteur.nom}"></p>
-                            </td>
+                            <td> <p th:utext="${t.auteur==null} ? ${null} : ${t.auteur.nom}"></p></td>
                             <td><a th:href="@{delete(id=${t.id})}">Supprimer le tableau n° [[${t.id}]]</a></td>
 			</tr>
 		</table>
